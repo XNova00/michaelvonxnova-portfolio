@@ -8,7 +8,7 @@ export const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="About" element={<AboutPage />} />
-      <Route path="About" element={<ProjectPage />} />
+      <Route path="Project" element={<ProjectPage />} />
     </Routes>
   );
 };

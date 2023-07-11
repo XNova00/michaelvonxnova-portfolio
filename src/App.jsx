@@ -2,13 +2,14 @@ import { Box } from "@mui/material";
 import "./App.css";
 import { MainRoutes } from "./MainRoutes";
 import Navbar from "./components/Navbar";
-// import { HomePage } from "./components/HomePage";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
     <Box>
       <Navbar />
       <MainRoutes />
+      <Footer />
     </Box>
   );
 }

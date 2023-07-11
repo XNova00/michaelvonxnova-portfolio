@@ -9,10 +9,12 @@ export const HomePage = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
+          justifyContent: "center",
           paddingTop: "64px",
           paddingBottom: "64px",
           gap: "64px",
         }}
+        disableGutters={true}
       >
         <Typography variant="h1">Creative Designer & Developer</Typography>
         <Typography variant="h2">
@@ -21,7 +23,6 @@ export const HomePage = () => {
         </Typography>
         <ArrowTopButton />
       </Container>
-      ;
     </>
   );
 };

@@ -1,10 +1,13 @@
 import {
   BootstrapIcon,
   CssIcon,
+  FacebookIcon,
   FigmaIcon,
   GitIcon,
   HtmlIcon,
+  InstagramIcon,
   JsIcon,
+  LinkedIcon,
   MuiIcon,
   ReactIcon,
   ViteIcon,
@@ -14,12 +17,15 @@ import {
 export const navItems = [
   {
     name: "Home",
+    path: "/",
   },
   {
     name: "About",
+    path: "About",
   },
   {
     name: "Project",
+    path: "Project",
   },
 ];
 
@@ -53,6 +59,17 @@ export const techStackIcons = [
   },
   {
     icon: <JsIcon />,
+  },
+];
+export const buttonIcon = [
+  {
+    media: <FacebookIcon />,
+  },
+  {
+    media: <InstagramIcon />,
+  },
+  {
+    media: <LinkedIcon />,
   },
 ];
 
