@@ -31,37 +31,47 @@ export const navItems = [
 
 export const techStackIcons = [
   {
+    isTop: true,
     icon: <HtmlIcon />,
   },
   {
+    isTop: true,
     icon: <CssIcon />,
   },
   {
+    isTop: true,
     icon: <BootstrapIcon />,
   },
   {
+    isTop: true,
     icon: <ReactIcon />,
   },
   {
+    isTop: true,
     icon: <MuiIcon />,
   },
   {
+    isBottom: false,
     icon: <ViteIcon />,
   },
   {
+    isBottom: false,
     icon: <FigmaIcon />,
   },
   {
+    isBottom: false,
     icon: <VsCodeIcon />,
   },
   {
+    isBottom: false,
     icon: <GitIcon />,
   },
   {
+    isBottom: false,
     icon: <JsIcon />,
   },
 ];
-export const buttonIcon = [
+export const socMedIcon = [
   {
     media: <FacebookIcon />,
   },

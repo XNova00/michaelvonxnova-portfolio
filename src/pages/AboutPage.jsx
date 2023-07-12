@@ -7,37 +7,47 @@ import {
   ListItemIcon,
   Typography,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { techStackIcons } from "../utils/Data";
 
 export const AboutPage = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <Container
         maxWidth="lg"
         sx={{
+          marginTop: {
+            xs: "32px",
+            md: "64px",
+            lg: "128px",
+          },
+          marginBottom: {
+            xs: "32px",
+            md: "64px",
+            lg: "128px",
+          },
           display: "flex",
           flexDirection: "column",
-          paddingTop: "64px",
-          paddingBottom: "64px",
-          gap: "128px",
+          gap: {
+            xs: "32px",
+            md: "64px",
+            lg: "128px",
+          },
         }}
       >
-        <Box
-          sx={{
-            display: { sm: "block", md: "flex" },
-            flexDirection: "column",
-            gap: "64px",
-          }}
+        {/* First Section with IMG */}
+        <Grid
+          container
+          rowSpacing={isSmallScreen ? 2 : 4}
+          columnSpacing={isSmallScreen ? 2 : 4}
         >
-          <Box>
+          <Grid item sm={12}>
             <Typography variant="h1">About me</Typography>
-          </Box>
-          <Box
-            sx={{
-              display: { sm: "block", md: "flex" },
-              gap: "64px",
-            }}
-          >
+          </Grid>
+          <Grid item sm={12} md={6}>
             <img
               src="/img/About Img.png"
               alt="Michael Von Image"
@@ -45,6 +55,8 @@ export const AboutPage = () => {
                 width: "100%",
               }}
             />
+          </Grid>
+          <Grid item sm={12} md={6}>
             <Typography variant="body1" color="secondary.main">
               "Hello! I'm Michael Von, a passionate and innovative web designer
               and front-end web developer. With a strong eye for aesthetics and
@@ -60,23 +72,25 @@ export const AboutPage = () => {
               compelling experience, let's connect. Together, we can bring your
               ideas to life and make an impact in the digital world."
             </Typography>
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
         <Box
           sx={{
-            display: { sm: "block", md: "flex" },
+            display: "grid",
             flexDirection: "column",
-            gap: "64px",
           }}
+          rowGap={isSmallScreen ? 2 : 4}
+          columnGap={isSmallScreen ? 2 : 4}
         >
           <Box>
             <Typography variant="h1">Skills</Typography>
           </Box>
           <Box
             sx={{
-              display: { sm: "block", md: "flex" },
-              gap: "64px",
+              display: { sm: "grid", md: "grid", lg: "flex" },
             }}
+            rowGap={isSmallScreen ? 2 : 4}
+            columnGap={isSmallScreen ? 2 : 4}
           >
             <Typography component="ul" variant="body1" color="secondary.main">
               "I am constantly expanding my skill set and staying at the
@@ -126,11 +140,11 @@ export const AboutPage = () => {
                 <Grid>{item.icon}</Grid>
               </Grid>
             ))} */}
-            <Grid container spacing={2}>
+            <Grid container justifyContent="center">
               {techStackIcons.map((item, index) => (
                 <Grid item lg={6} key={index}>
                   <List>
-                    <ListItem>
+                    <ListItem sx={{ justifyContent: "center" }}>
                       <ListItemIcon>{item.icon}</ListItemIcon>
                     </ListItem>
                   </List>
@@ -138,6 +152,12 @@ export const AboutPage = () => {
               ))}
             </Grid>
           </Box>
+
+          {/* {techStackIcons.map((item) => (
+              <Grid container key={item}>
+                <Grid>{item.icon}</Grid>
+              </Grid>
+            ))} */}
         </Box>
       </Container>
     </>

@@ -1,35 +1,73 @@
-import { Box, Container, Button, IconButton, Typography } from "@mui/material";
+import { Container, Grid, Button } from "@mui/material";
 
-import { buttonIcon, navItems } from "../utils/Data";
 import { Link } from "react-router-dom";
+import { navItems, socMedIcon } from "../utils/Data";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const Footer = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      <Container
-        maxWidth="lg"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "32px",
-          paddingTop: "64px",
-          paddingBottom: "64px",
-        }}
-      >
-        {/* <Grid container>
-          <Grid sm={12} md={4}>
+      {/* <Container maxWidth="lg">
+        <Grid container alignItems="center" justifyContent="space-between">
+          <Grid item xs={12} sm={4} direction="row">
             <img src="/img/Logo.png" alt="Logo" />
           </Grid>
-          <Grid sm={12} md={4}>
-            <Box
-              sx={{
-                display: {
-                  xs: "none",
-                  sm: "flex",
-                  gap: "64px",
-                },
-              }}
+          <Grid item xs={12} sm={4} direction="row">
+            <Grid container justifyContent="flex-end" spacing={2}>
+              <Grid item>
+                {navItems.map((item) => (
+                  <Button key={item}>
+                    <Link variant="body1" to={item.path}>
+                      {item.name}
+                    </Link>
+                  </Button>
+                ))}
+              </Grid>
+              <Grid item xs={12} sm={4} direction="row">
+                {socMedIcon.map((icon) => (
+                  <Button key={icon}>{icon.media}</Button>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container> */}
+
+      <footer>
+        <Container
+          maxWidth="lg"
+          sx={{
+            paddingTop: {
+              xs: "32px",
+              md: "64px",
+            },
+            paddingBottom: {
+              xs: "32px",
+              md: "64px",
+            },
+          }}
+        >
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="center"
+            rowSpacing={isSmallScreen ? 2 : 4}
+            columnSpacing={isSmallScreen ? 2 : 4}
+          >
+            <Grid
+              item
+              xs={12}
+              md={4}
+              display="flex"
+              justifyContent={isMobile ? "center" : "start"}
             >
+              <img src="/img/Logo.png" alt="Logo" />
+            </Grid>
+            <Grid item xs={12} md={4} display="flex" justifyContent="center">
               {navItems.map((item) => (
                 <Button key={item}>
                   <Link variant="body1" to={item.path}>
@@ -37,65 +75,23 @@ export const Footer = () => {
                   </Link>
                 </Button>
               ))}
-            </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={4}
+              display="flex"
+              justifyContent={isMobile ? "center" : "end"}
+            >
+              {socMedIcon.map((icon) => (
+                <Button key={icon}>
+                  <Link to={icon.path}>{icon.media}</Link>
+                </Button>
+              ))}
+            </Grid>
           </Grid>
-          <Grid sm={12} md={4}>
-            {buttonIcon.map((item) => (
-              <IconButton key={item}>{item.media}</IconButton>
-            ))}
-          </Grid>
-        </Grid> */}
-        <Box
-          sx={{
-            display: { sm: "block", md: "flex" },
-            justifyContent: "space-between",
-            width: "100%",
-          }}
-        >
-          <Box>
-            <img src="/img/Logo.png" alt="Logo" />
-          </Box>
-          <Box
-            sx={{
-              display: {
-                sm: "block",
-                md: "flex",
-                gap: "64px",
-              },
-            }}
-          >
-            {navItems.map((item) => (
-              <Button key={item}>
-                <Link variant="body1" to={item.path}>
-                  {item.name}
-                </Link>
-              </Button>
-            ))}
-          </Box>
-          <Box
-            sx={{
-              display: {
-                sm: "block",
-                md: "flex",
-              },
-            }}
-          >
-            {buttonIcon.map((item) => (
-              <IconButton key={item}>{item.media}</IconButton>
-            ))}
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Typography variant="body1" color="secondary.main">
-            Copyright 2023 . All right reserved.
-          </Typography>
-        </Box>
-      </Container>
+        </Container>
+      </footer>
     </>
   );
 };

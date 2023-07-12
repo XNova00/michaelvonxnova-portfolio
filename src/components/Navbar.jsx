@@ -1,8 +1,9 @@
-import { AppBar, Box, Toolbar, Button } from "@mui/material";
-import { navItems } from "../utils/Data";
-import { Link } from "react-router-dom";
+import { AppBar, Box, Toolbar, Button, Container } from "@mui/material";
 
-export default function Navbar() {
+import { Link } from "react-router-dom";
+import { navItems } from "../utils/Data";
+
+export const Navbar = () => {
   return (
     <Box>
       <AppBar position="static">
@@ -40,4 +41,4 @@ export default function Navbar() {
       </AppBar>
     </Box>
   );
-}
+};
