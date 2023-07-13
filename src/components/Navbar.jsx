@@ -1,44 +1,168 @@
-import { AppBar, Box, Toolbar, Button, Container } from "@mui/material";
+import * as React from "react";
+import PropTypes from "prop-types";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
 
-import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
 import { navItems } from "../utils/Data";
+import { Link } from "react-router-dom";
 
-export const Navbar = () => {
-  return (
-    <Box>
-      <AppBar position="static">
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: "64px 100px",
-            boxShadow: "none",
-          }}
-          disableGutters={true}
-          variant="regular"
-        >
-          <Box>
-            <img src="/img/Logo.png" alt="Logo" />
-          </Box>
-          <Box
+import { useTheme } from "styled-components";
+import { Container } from "@mui/material";
+
+const drawerWidth = "100%";
+
+function Navbar(props) {
+  const theme = useTheme();
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+
+  const drawer = (
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+        height: "100%",
+        backgroundColor: "primary.main",
+        boxShadow: "none",
+      }}
+    >
+      <Box sx={{ py: 2 }}>
+        <img src="/img/Logo.svg" alt="" style={{ width: "30px" }} />
+      </Box>
+      <Divider
+        sx={{
+          backgroundColor: "transparent",
+          borderStyle: "none",
+        }}
+      />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "24px",
+          margin: "24px auto",
+        }}
+      >
+        {navItems.map((item) => (
+          <Button
+            component={Link}
+            key={item}
+            to={item.path}
             sx={{
-              display: {
-                xs: "none",
-                sm: "flex",
-                gap: "64px",
+              "&&&": {
+                fontFamily: "Inter, sans-serif",
+                fontSize: "18px",
+                fontStyle: "normal",
+                fontWeight: 400,
+                color: "secondary.main",
+                "@media (max-width:600px)": {
+                  fontSize: "16px",
+                },
               },
             }}
           >
-            {navItems.map((item) => (
-              <Button key={item}>
-                <Link variant="body1" to={item.path}>
-                  {item.name}
-                </Link>
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+            {item.name}
+          </Button>
+        ))}
+      </Box>
     </Box>
   );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <AppBar
+          component="nav"
+          position="static"
+          sx={{
+            pt: 4,
+            boxShadow: "none",
+          }}
+        >
+          <Toolbar disableGutters={true}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Box
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            >
+              <img src="/img/Logo.svg" alt="" style={{ width: "40px" }} />
+            </Box>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Button
+                  component={Link}
+                  key={item}
+                  to={item.path}
+                  sx={{
+                    "&&&": {
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "18px",
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      color: "secondary.main",
+                      "@media (max-width:600px)": {
+                        fontSize: "16px",
+                      },
+                    },
+                  }}
+                >
+                  {item.name}
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </Container>
+
+      <Box component="nav">
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </Box>
+  );
+}
+
+Navbar.propTypes = {
+  window: PropTypes.func,
 };
+
+export default Navbar;

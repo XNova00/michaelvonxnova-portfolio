@@ -1,4 +1,4 @@
-import { Container, Grid, Button } from "@mui/material";
+import { Container, Grid, Button, Typography } from "@mui/material";
 
 import { Link } from "react-router-dom";
 import { navItems, socMedIcon } from "../utils/Data";
@@ -8,7 +8,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 export const Footer = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       {/* <Container maxWidth="lg">
@@ -41,6 +41,8 @@ export const Footer = () => {
         <Container
           maxWidth="lg"
           sx={{
+            display: "flex",
+            flexDirection: "column",
             paddingTop: {
               xs: "32px",
               md: "64px",
@@ -49,6 +51,7 @@ export const Footer = () => {
               xs: "32px",
               md: "64px",
             },
+            gap: "24px",
           }}
         >
           <Grid
@@ -63,9 +66,9 @@ export const Footer = () => {
               xs={12}
               md={4}
               display="flex"
-              justifyContent={isMobile ? "center" : "start"}
+              justifyContent={isMediumScreen ? "center" : "start"}
             >
-              <img src="/img/Logo.png" alt="Logo" />
+              <img src="/img/Logo.svg" alt="" style={{ width: "40px" }} />
             </Grid>
             <Grid item xs={12} md={4} display="flex" justifyContent="center">
               {navItems.map((item) => (
@@ -81,7 +84,7 @@ export const Footer = () => {
               xs={12}
               md={4}
               display="flex"
-              justifyContent={isMobile ? "center" : "end"}
+              justifyContent={isMediumScreen ? "center" : "end"}
             >
               {socMedIcon.map((icon) => (
                 <Button key={icon}>
@@ -89,6 +92,11 @@ export const Footer = () => {
                 </Button>
               ))}
             </Grid>
+          </Grid>
+          <Grid item display="flex" justifyContent="center">
+            <Typography variant="body3" color="secondary.main">
+              Copyright 2023 . All right reserved.
+            </Typography>
           </Grid>
         </Container>
       </footer>

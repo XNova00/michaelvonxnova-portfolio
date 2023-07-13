@@ -27,6 +27,10 @@ export const navItems = [
     name: "Project",
     path: "Project",
   },
+  {
+    name: "Note",
+    path: "Note",
+  },
 ];
 
 export const techStackIcons = [

@@ -8,25 +8,6 @@ export const HomePage = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      {/* <Container
-        maxWidth="lg"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          paddingTop: "64px",
-          paddingBottom: "64px",
-          gap: "64px",
-        }}
-        disableGutters={true}
-      >
-        <Typography variant="h1">Creative Designer & Developer</Typography>
-        <Typography variant="h2">
-          I’m a web designer & front-end web developer based in Baguio City,
-          Philippines.
-        </Typography>
-        <ArrowTopButton />
-      </Container> */}
       <Container
         maxWidth="lg"
         sx={{
@@ -40,13 +21,15 @@ export const HomePage = () => {
             md: "64px",
             lg: "128px",
           },
+
+          // gap: {
+          //   xs: "32px",
+          //   md: "64px",
+          //   lg: "128px",
+          // },
           display: "flex",
           flexDirection: "column",
-          gap: {
-            xs: "32px",
-            md: "64px",
-            lg: "128px",
-          },
+          // justifyContent: "end",
         }}
       >
         <Grid

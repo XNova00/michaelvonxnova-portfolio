@@ -10,6 +10,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { techStackIcons } from "../utils/Data";
+import { Footer } from "../components/Footer";
 
 export const AboutPage = () => {
   const theme = useTheme();
@@ -160,6 +161,7 @@ export const AboutPage = () => {
             ))} */}
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };
