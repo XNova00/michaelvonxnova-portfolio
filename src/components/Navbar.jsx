@@ -84,62 +84,59 @@ function Navbar(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <AppBar
-          component="nav"
-          position="static"
-          sx={{
-            pt: 4,
-            boxShadow: "none",
-          }}
-        >
-          <Toolbar disableGutters={true}>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Box
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              <img
-                src="/img/creative.von.svg"
-                alt=""
-                // style={{ width: "40px" }}
-              />
-            </Box>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Button
-                  component={Link}
-                  key={item}
-                  to={item.path}
-                  sx={{
-                    "&&&": {
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "18px",
-                      fontStyle: "normal",
-                      fontWeight: 400,
-                      color: "secondary.main",
-                      "@media (max-width:600px)": {
-                        fontSize: "16px",
-                      },
+      <AppBar
+        component="nav"
+        position="static"
+        sx={{
+          pt: 4,
+          boxShadow: "none",
+        }}
+      >
+        <Toolbar disableGutters={true}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          >
+            <img
+              src="/img/creative.von.svg"
+              alt=""
+              // style={{ width: "40px" }}
+            />
+          </Box>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navItems.map((item) => (
+              <Button
+                component={Link}
+                key={item}
+                to={item.path}
+                sx={{
+                  "&&&": {
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    color: "secondary.main",
+                    "@media (max-width:600px)": {
+                      fontSize: "16px",
                     },
-                  }}
-                >
-                  {item.name}
-                </Button>
-              ))}
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </Container>
+                  },
+                }}
+              >
+                {item.name}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
 
       <Box component="nav">
         <Drawer

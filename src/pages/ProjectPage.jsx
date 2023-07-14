@@ -1,105 +1,48 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  IconButton,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
-import PropTypes from "prop-types";
-import React from "react";
-import { theme } from "../components/ThemeProvider";
-
-function CustomTabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-CustomTabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
+import { Grid, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const ProjectPage = () => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      <Container maxWidth="lg">
-        <Box sx={{ width: "100%" }}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              aria-label="basic tabs example"
-            >
-              <Tab label="All" {...a11yProps(0)} />
-              <Tab label="Website Design" {...a11yProps(1)} />
-              <Tab label="Graphic Design" {...a11yProps(2)} />
-              <Tab label="Web Development" {...a11yProps(2)} />
-            </Tabs>
-          </Box>
-          <CustomTabPanel value={value} index={0}>
-            <Card sx={{ display: "flex" }}>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <CardContent sx={{ flex: "1 0 auto" }}>
-                  <Typography component="div" variant="h3" color="primary.main">
-                    Happy Wally UI / UX Design
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    color="text.secondary"
-                    component="div"
-                  >
-                    Mac Miller
-                  </Typography>
-                </CardContent>
-              </Box>
-              <CardMedia
-                component="img"
-                sx={{ width: 151 }}
-                image="/img/HappyWally Img.png"
-                alt="Happy Wally Img"
-              />
-            </Card>
-          </CustomTabPanel>
-          <CustomTabPanel value={value} index={1}>
-            Item Two
-          </CustomTabPanel>
-          <CustomTabPanel value={value} index={2}>
-            Item Three
-          </CustomTabPanel>
-        </Box>
-      </Container>
+      <Grid
+        container
+        rowSpacing={isSmallScreen ? 2 : 4}
+        columnSpacing={isSmallScreen ? 2 : 4}
+        justifyContent={"space-between"}
+      >
+        <Grid item sm={12}>
+          <Typography variant="h1">Project</Typography>
+        </Grid>
+        <Grid item sm={12} lg="auto">
+          <img
+            src="/img/About Img.png"
+            alt="Michael Von Image"
+            style={{
+              width: "100%",
+            }}
+          />
+        </Grid>
+        <Grid item sm={12} lg={7}>
+          <Typography variant="body1" color="secondary.main">
+            "Hello! I'm Michael Von, a passionate and innovative web designer
+            and front-end web developer. With a strong eye for aesthetics and a
+            understanding of user experience. I believe that good design is not
+            only visually appealing but also user-centric. My goal is to merge
+            creativity with technical expertise to craft websites that not only
+            look stunning but also provide seamless navigation and optimal
+            performance across various devices and platforms.
+            <br />
+            <br />
+            If you're looking for a creative web designer and front-end web
+            developer who can transform your digital presence into a compelling
+            experience, let's connect. Together, we can bring your ideas to life
+            and make an impact in the digital world."
+          </Typography>
+        </Grid>
+      </Grid>
     </>
   );
 };

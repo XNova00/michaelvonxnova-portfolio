@@ -17,65 +17,44 @@ export const AboutPage = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      <Container
-        maxWidth="lg"
-        sx={{
-          marginTop: {
-            xs: "32px",
-            md: "64px",
-            lg: "128px",
-          },
-          marginBottom: {
-            xs: "32px",
-            md: "64px",
-            lg: "128px",
-          },
-          display: "flex",
-          flexDirection: "column",
-          gap: {
-            xs: "32px",
-            md: "64px",
-            lg: "128px",
-          },
-        }}
+      {/* First Section with IMG */}
+      <Grid
+        container
+        rowSpacing={isSmallScreen ? 2 : 4}
+        columnSpacing={isSmallScreen ? 2 : 4}
+        justifyContent={"space-between"}
       >
-        {/* First Section with IMG */}
-        <Grid
-          container
-          rowSpacing={isSmallScreen ? 2 : 4}
-          columnSpacing={isSmallScreen ? 2 : 4}
-        >
-          <Grid item sm={12}>
-            <Typography variant="h1">About me</Typography>
-          </Grid>
-          <Grid item sm={12} md={6}>
-            <img
-              src="/img/About Img.png"
-              alt="Michael Von Image"
-              style={{
-                width: "100%",
-              }}
-            />
-          </Grid>
-          <Grid item sm={12} md={6}>
-            <Typography variant="body1" color="secondary.main">
-              "Hello! I'm Michael Von, a passionate and innovative web designer
-              and front-end web developer. With a strong eye for aesthetics and
-              a understanding of user experience. I believe that good design is
-              not only visually appealing but also user-centric. My goal is to
-              merge creativity with technical expertise to craft websites that
-              not only look stunning but also provide seamless navigation and
-              optimal performance across various devices and platforms.
-              <br />
-              <br />
-              If you're looking for a creative web designer and front-end web
-              developer who can transform your digital presence into a
-              compelling experience, let's connect. Together, we can bring your
-              ideas to life and make an impact in the digital world."
-            </Typography>
-          </Grid>
+        <Grid item sm={12}>
+          <Typography variant="h1">About me</Typography>
         </Grid>
-        <Box
+        <Grid item sm={12} lg="auto">
+          <img
+            src="/img/About Img.png"
+            alt="Michael Von Image"
+            style={{
+              width: "100%",
+            }}
+          />
+        </Grid>
+        <Grid item sm={12} lg={7}>
+          <Typography variant="body1" color="secondary.main">
+            "Hello! I'm Michael Von, a passionate and innovative web designer
+            and front-end web developer. With a strong eye for aesthetics and a
+            understanding of user experience. I believe that good design is not
+            only visually appealing but also user-centric. My goal is to merge
+            creativity with technical expertise to craft websites that not only
+            look stunning but also provide seamless navigation and optimal
+            performance across various devices and platforms.
+            <br />
+            <br />
+            If you're looking for a creative web designer and front-end web
+            developer who can transform your digital presence into a compelling
+            experience, let's connect. Together, we can bring your ideas to life
+            and make an impact in the digital world."
+          </Typography>
+        </Grid>
+      </Grid>
+      {/* <Box
           sx={{
             display: "grid",
             flexDirection: "column",
@@ -136,11 +115,11 @@ export const AboutPage = () => {
                 community.
               </li>
             </Typography>
-            {/* {techStackIcons.map((item) => (
+            {techStackIcons.map((item) => (
               <Grid container key={item}>
                 <Grid>{item.icon}</Grid>
               </Grid>
-            ))} */}
+            ))}
             <Grid container justifyContent="center">
               {techStackIcons.map((item, index) => (
                 <Grid item lg={6} key={index}>
@@ -154,14 +133,12 @@ export const AboutPage = () => {
             </Grid>
           </Box>
 
-          {/* {techStackIcons.map((item) => (
+          {techStackIcons.map((item) => (
               <Grid container key={item}>
                 <Grid>{item.icon}</Grid>
               </Grid>
-            ))} */}
-        </Box>
-      </Container>
-      <Footer />
+            ))}
+        </Box> */}
     </>
   );
 };

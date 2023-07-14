@@ -1,7 +1,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { MainRoutes } from "./MainRoutes";
+// import { MainRoutes } from "./MainRoutes";
+import { Container, CssBaseline, Stack } from "@mui/material";
+import { HomePage } from "./pages/HomePage";
+import { AboutPage } from "./pages/AboutPage";
+import { ProjectPage } from "./pages/ProjectPage";
 
 // import AnimatedCursor from "react-animated-cursor";
 
@@ -18,10 +22,16 @@ function App() {
         innerScale={0.7}
         outerScale={5}
       /> */}
-
-      <Navbar />
-      <MainRoutes />
-      <Footer />
+      <Container maxWidth="lg">
+        <CssBaseline />
+        <Stack spacing={5}>
+          <Navbar />
+          <HomePage />
+          <AboutPage />
+          <ProjectPage />
+          <Footer />
+        </Stack>
+      </Container>
     </>
   );
 }
