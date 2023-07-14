@@ -37,7 +37,7 @@ export const Footer = () => {
         </Grid>
       </Container> */}
 
-      <footer>
+      <Footer position="fixed">
         <Container
           maxWidth="lg"
           sx={{
@@ -61,15 +61,6 @@ export const Footer = () => {
             rowSpacing={isSmallScreen ? 2 : 4}
             columnSpacing={isSmallScreen ? 2 : 4}
           >
-            <Grid
-              item
-              xs={12}
-              md={4}
-              display="flex"
-              justifyContent={isMediumScreen ? "center" : "start"}
-            >
-              <img src="/img/Logo.svg" alt="" style={{ width: "40px" }} />
-            </Grid>
             <Grid item xs={12} md={4} display="flex" justifyContent="center">
               {navItems.map((item) => (
                 <Button key={item}>
@@ -93,13 +84,8 @@ export const Footer = () => {
               ))}
             </Grid>
           </Grid>
-          <Grid item display="flex" justifyContent="center">
-            <Typography variant="body3" color="secondary.main">
-              Copyright 2023 . All right reserved.
-            </Typography>
-          </Grid>
         </Container>
-      </footer>
+      </Footer>
     </>
   );
 };

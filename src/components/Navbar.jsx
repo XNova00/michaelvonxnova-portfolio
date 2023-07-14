@@ -37,8 +37,8 @@ function Navbar(props) {
         boxShadow: "none",
       }}
     >
-      <Box sx={{ py: 2 }}>
-        <img src="/img/Logo.svg" alt="" style={{ width: "30px" }} />
+      <Box sx={{ py: 3 }}>
+        <img src="/img/creative.von.svg" alt="" style={{ width: "160px" }} />
       </Box>
       <Divider
         sx={{
@@ -108,7 +108,11 @@ function Navbar(props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              <img src="/img/Logo.svg" alt="" style={{ width: "40px" }} />
+              <img
+                src="/img/creative.von.svg"
+                alt=""
+                // style={{ width: "40px" }}
+              />
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (

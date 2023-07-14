@@ -4,14 +4,12 @@ import {
   FacebookIcon,
   FigmaIcon,
   GitIcon,
-  HtmlIcon,
   InstagramIcon,
   JsIcon,
   LinkedIcon,
   MuiIcon,
   ReactIcon,
   ViteIcon,
-  VsCodeIcon,
 } from "../components/CustIconSvg";
 
 export const navItems = [
@@ -27,52 +25,32 @@ export const navItems = [
     name: "Project",
     path: "Project",
   },
-  {
-    name: "Note",
-    path: "Note",
-  },
 ];
 
 export const techStackIcons = [
   {
-    isTop: true,
-    icon: <HtmlIcon />,
-  },
-  {
-    isTop: true,
-    icon: <CssIcon />,
-  },
-  {
-    isTop: true,
-    icon: <BootstrapIcon />,
-  },
-  {
-    isTop: true,
-    icon: <ReactIcon />,
-  },
-  {
-    isTop: true,
-    icon: <MuiIcon />,
-  },
-  {
-    isBottom: false,
-    icon: <ViteIcon />,
-  },
-  {
-    isBottom: false,
     icon: <FigmaIcon />,
   },
   {
-    isBottom: false,
-    icon: <VsCodeIcon />,
+    icon: <CssIcon />,
   },
   {
-    isBottom: false,
-    icon: <GitIcon />,
+    icon: <BootstrapIcon />,
   },
   {
-    isBottom: false,
     icon: <JsIcon />,
+  },
+  {
+    icon: <MuiIcon />,
+  },
+  {
+    icon: <ReactIcon />,
+  },
+  {
+    icon: <ViteIcon />,
+  },
+  {
+    icon: <GitIcon />,
   },
 ];
 export const socMedIcon = [
@@ -87,4 +65,50 @@ export const socMedIcon = [
   },
 ];
 
-export const cardProject = [{}];
+// export const cardProject = [
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+//   {
+//     img: ,
+//     description: ,
+//   },
+
+// ];

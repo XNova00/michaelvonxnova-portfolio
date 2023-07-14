@@ -14,17 +14,17 @@ export const theme = createTheme({
   typography: {
     h1: {
       fontFamily: "Inter, sans-serif",
-      fontSize: "96px",
+      fontSize: "52px",
       fontStyle: "normal",
       fontWeight: 500,
       color: "#FBF9F9",
       "@media (max-width:600px)": {
-        fontSize: "42px",
+        fontSize: "32px",
       },
     },
     h2: {
       fontFamily: "Inter, sans-serif",
-      fontSize: "42px",
+      fontSize: "32px",
       fontStyle: "normal",
       fontWeight: 400,
       color: "#FBF9F9",

@@ -1,12 +1,13 @@
-import { Box } from "@mui/material";
 import "./App.css";
-import { MainRoutes } from "./MainRoutes";
 import Navbar from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { MainRoutes } from "./MainRoutes";
+
 // import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   return (
-    <Box>
+    <>
       {/* <AnimatedCursor
         outerStyle={{
           border: "2px solid #FBF9F9",
@@ -17,9 +18,11 @@ function App() {
         innerScale={0.7}
         outerScale={5}
       /> */}
+
       <Navbar />
       <MainRoutes />
-    </Box>
+      <Footer />
+    </>
   );
 }
 
