@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { projectContent } from "../utils/Data";
 
 export const ProjectPage = () => {
   const theme = useTheme();
@@ -16,32 +17,23 @@ export const ProjectPage = () => {
         <Grid item sm={12}>
           <Typography variant="h1">Project</Typography>
         </Grid>
-        <Grid item sm={12} lg="auto">
-          <img
-            src="/img/About Img.png"
-            alt="Michael Von Image"
-            style={{
-              width: "100%",
-            }}
-          />
-        </Grid>
-        <Grid item sm={12} lg={7}>
-          <Typography variant="body1" color="secondary.main">
-            "Hello! I'm Michael Von, a passionate and innovative web designer
-            and front-end web developer. With a strong eye for aesthetics and a
-            understanding of user experience. I believe that good design is not
-            only visually appealing but also user-centric. My goal is to merge
-            creativity with technical expertise to craft websites that not only
-            look stunning but also provide seamless navigation and optimal
-            performance across various devices and platforms.
-            <br />
-            <br />
-            If you're looking for a creative web designer and front-end web
-            developer who can transform your digital presence into a compelling
-            experience, let's connect. Together, we can bring your ideas to life
-            and make an impact in the digital world."
-          </Typography>
-        </Grid>
+        {projectContent.map ((projects, index) => (
+          <><Grid item sm={12} lg={5} sx={{ order: index % 2 === 0 ? 1 : 2 }}>
+            <Typography variant="h2" >
+              {projects.title}
+            </Typography>
+            <Typography variant="body1" color="secondary.main">
+              {projects.text}
+            </Typography>
+          </Grid><Grid item sm={12} lg="auto" sx={{ order: index % 2 === 0 ? 2 : 1 }}>
+              <img
+                src={projects.image}
+                alt="images"
+                style={{
+                  maxWidth: "100%",
+                }} />
+            </Grid></>
+        ))}
       </Grid>
     </>
   );

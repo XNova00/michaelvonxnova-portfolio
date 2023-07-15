@@ -32,7 +32,7 @@ export const AboutPage = () => {
             src="/img/About Img.png"
             alt="Michael Von Image"
             style={{
-              width: "100%",
+              maxWidth: "100%",
             }}
           />
         </Grid>

@@ -65,50 +65,50 @@ export const socMedIcon = [
   },
 ];
 
-// export const cardProject = [
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
-//   {
-//     img: ,
-//     description: ,
-//   },
+export const projectContent = [
+  {
+    image: "/img/Happy Wally UI.png", 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
 
-// ];
+    
+  },{
+    image:  "/img/App Screenshot Design.png",
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
+
+    
+  },{
+    image: "/img/Ai Maximizer Design.png", 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
+
+    
+  },{
+    image:"/img/Jerkdolls Design.png", 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
+  },{
+    image: "/img/my4everlove Design.png", 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
+
+    
+  },{
+    image: "/img/Orbital SEO Design.png", 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
+
+  },
+  {
+    image: "/img/Recruitment Design.png", 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness."
+
+  },
+  {
+    image: "/img/Hypeburger Web Dev.png" , 
+    title: "Happy Wally Design",
+    text: "Introducing Happy Wally: Your Personal Happiness Companion. Our UI/UX design project is centered around creating an immersive and uplifting experience where users can freely express their feelings and find joy in their journey towards happiness.",
+  },
+];
