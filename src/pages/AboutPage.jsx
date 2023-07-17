@@ -1,12 +1,4 @@
-import {
-  Box,
-  Container,
-  Grid,
-  List,
-  ListItem,
-  ListItemIcon,
-  Typography,
-} from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { techStackIcons } from "../utils/Data";
@@ -15,6 +7,7 @@ import { Footer } from "../components/Footer";
 export const AboutPage = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <>
       {/* First Section with IMG */}
@@ -23,11 +16,18 @@ export const AboutPage = () => {
         rowSpacing={isSmallScreen ? 2 : 4}
         columnSpacing={isSmallScreen ? 2 : 4}
         justifyContent={"space-between"}
+        padding={0}
       >
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <Typography variant="h1">About me</Typography>
         </Grid>
-        <Grid item sm={12} lg="auto">
+        <Grid
+          item
+          xs={12}
+          lg="auto"
+          display={"flex"}
+          justifyContent={isLargeScreen ? "center" : "end"}
+        >
           <img
             src="/img/About Img.png"
             alt="Michael Von Image"
@@ -36,7 +36,7 @@ export const AboutPage = () => {
             }}
           />
         </Grid>
-        <Grid item sm={12} lg={7}>
+        <Grid item xs={12} lg={6}>
           <Typography variant="body1" color="secondary.main">
             "Hello! I'm Michael Von, a passionate and innovative web designer
             and front-end web developer. With a strong eye for aesthetics and a

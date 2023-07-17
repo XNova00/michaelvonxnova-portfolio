@@ -1,11 +1,11 @@
 import {
   Box,
-  Container,
-  Divider,
+  // Container,
+  // Divider,
   Grid,
-  List,
-  ListItem,
-  ListItemIcon,
+  // List,
+  // ListItem,
+  // ListItemIcon,
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -15,16 +15,18 @@ import { techStackIcons } from "../utils/Data";
 export const HomePage = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  // const isMediumScreen = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <Grid
         container
-        rowSpacing={isSmallScreen ? 2 : 2}
-        columnSpacing={isSmallScreen ? 2 : 2}
+        rowSpacing={isSmallScreen ? 2 : 4}
+        columnSpacing={isSmallScreen ? 2 : 4}
         direction="row"
-        display={"flex"}
+        display="flex"
         justifyContent={"space-between"}
+        padding={0}
+        // disableGutter={true}
       >
         <Grid
           item
@@ -36,30 +38,34 @@ export const HomePage = () => {
           // rowSpacing={isSmallScreen ? 2 : 4}
         >
           <Typography variant="h1">Creative Designer & Developer</Typography>
-          <Typography variant="h2">
+          <Typography variant="h3">
             I’m a web designer & front-end web developer based in Baguio City,
             Philippines.
           </Typography>
           <Box
-            sx={{
-              display: { sm: "block", lg: "flex" },
-              alignItems: "center",
-            }}
+            sx={
+              {
+                // display: { sm: "block", lg: "flex" },
+                // alignItems: "center",
+              }
+            }
           >
             <Typography variant="body1" color="secondary.main">
               Tech Stack
             </Typography>
-            <Divider
+            {/* <Divider
               orientation="vertical"
               sx={{
                 borderWidth: "0.1px",
                 display: { xs: "none", md: "none", lg: "flex" },
                 height: { xs: "0.5px", md: "24px" },
-                marginLeft: "16px",
-                borderColor: "secondarhy.main",
+                // marginLight: "16px",
+                borderColor: "secondary.main",
               }}
-            />
-            <List
+            /> */}
+            {/* <Grid
+              container
+              wrap="no-wrap"
               sx={{
                 display: "flex",
                 flexDirection: "row",
@@ -67,7 +73,7 @@ export const HomePage = () => {
               }}
             >
               {techStackIcons.map((item) => (
-                <ListItem key={item} disableGutters={true}>
+                <Grid key={item} disableGutters={true} xl={6}>
                   <ListItemIcon
                     sx={{
                       display: "flex",
@@ -76,21 +82,19 @@ export const HomePage = () => {
                   >
                     {item.icon}
                   </ListItemIcon>
-                </ListItem>
+                </Grid>
               ))}
-            </List>
+            </Grid> */}
           </Box>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          lg="auto"
-          // sx={{
-          //   display: "flex",
-          //   justifyContent: "center",
-          // }}
-        >
-          <img src="/img/Hero Img.png" alt="" />
+        <Grid item xs={12} lg="auto">
+          <img
+            src="/img/Hero Img.png"
+            alt=""
+            style={{
+              maxWidth: "100%",
+            }}
+          />
         </Grid>
       </Grid>
     </>
