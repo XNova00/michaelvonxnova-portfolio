@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-
 export const theme = createTheme({
   palette: {
     primary: {
@@ -73,6 +72,21 @@ export const theme = createTheme({
       fontWeight: 500,
       "@media (max-width:600px)": {
         fontSize: "16px",
+      },
+    },
+  },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          "&.MuiPaper-elevation1": {},
+          "&.MuiPaper-elevation2": {},
+          "&.MuiPaper-elevation3": {},
+          "&.MuiPaper-elevation4": {
+            boxShadow: "none",
+          },
+          "&.MuiPaper-elevation5": {},
+        },
       },
     },
   },

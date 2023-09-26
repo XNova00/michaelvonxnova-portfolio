@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { Footer } from "./components/Footer";
 // import { MainRoutes } from "./MainRoutes";
-import { Container, CssBaseline, Stack } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ProjectPage } from "./pages/ProjectPage";
@@ -24,13 +24,11 @@ function App() {
       /> */}
       <Container maxWidth="lg">
         <CssBaseline />
-        <Stack spacing={5}>
           <Navbar />
           <HomePage />
           <AboutPage />
           <ProjectPage />
           <Footer />
-        </Stack>
       </Container>
     </>
   );
